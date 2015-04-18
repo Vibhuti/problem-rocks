@@ -29,6 +29,9 @@ gem 'simple_form'
 gem "haml-rails"
 gem "rspec-rails"
 gem 'ckeditor'
+gem 'pry'
+gem 'pry-coolline'
+gem 'pry-nav'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
