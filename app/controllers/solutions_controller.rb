@@ -5,6 +5,7 @@ class SolutionsController < ApplicationController
   # GET /solutions.json
   def index
     @solutions = Solution.all
+    @problem = solution_params[:problem_id]
   end
 
   # GET /solutions/1

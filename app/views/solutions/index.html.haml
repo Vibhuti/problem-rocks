@@ -13,7 +13,7 @@
   %tbody
     - @solutions.each do |solution|
       %tr
-        %td= link_to solution.id, solution_path(solution)
+        %td= link_to solution.id, problem_solution_path(@problem, solution)
         %td= solution.content
         %td= solution.user_id
         %td= solution.problem_id

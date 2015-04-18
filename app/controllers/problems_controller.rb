@@ -15,6 +15,7 @@ class ProblemsController < ApplicationController
   # GET /problems/new
   def new
     @problem = Problem.new
+    @solution = Solution.new
   end
 
   # GET /problems/1/edit
@@ -25,6 +26,7 @@ class ProblemsController < ApplicationController
   # POST /problems.json
   def create
     @problem = Problem.new(problem_params)
+    @solution = @problem.solutions.build(problem_params[:solution])
 
     respond_to do |format|
       if @problem.save
@@ -69,6 +71,6 @@ class ProblemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def problem_params
-      params.require(:problem).permit(:title, :content, :user_id, :category)
+      params.require(:problem).permit(:title, :content, :user_id, :category, :solution_attributes => [:content, :problem_id])
     end
 end
