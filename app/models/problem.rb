@@ -13,5 +13,6 @@
 
 class Problem < ActiveRecord::Base
   has_many :solutions, dependent: :destroy
+  belongs_to :user
   # accepts_nested_attributes_for :solutions
 end
