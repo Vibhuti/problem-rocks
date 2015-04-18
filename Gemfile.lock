@@ -46,6 +46,11 @@ GEM
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     ckeditor (4.1.1)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -242,6 +247,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   byebug
+  carrierwave
   ckeditor
   coffee-rails (~> 4.1.0)
   devise
