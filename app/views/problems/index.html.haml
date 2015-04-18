@@ -4,9 +4,7 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:title)
-      %th= model_class.human_attribute_name(:content)
       %th= model_class.human_attribute_name(:user_id)
       %th= model_class.human_attribute_name(:category)
       %th= model_class.human_attribute_name(:created_at)
@@ -14,9 +12,7 @@
   %tbody
     - @problems.each do |problem|
       %tr
-        %td= link_to problem.id, problem_path(problem)
-        %td= problem.title
-        %td= problem.content
+        %td=link_to problem.title, problem_path(problem)
         %td= problem.user_id
         %td= problem.category
         %td=l problem.created_at

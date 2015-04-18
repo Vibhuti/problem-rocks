@@ -1,5 +1,6 @@
 %h2 Problem
 = simple_form_for @problem, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :title, :label => "Title  :", :input_html => {:style => 'width: 90%', :width => '90px', :height => '30px' }
   = f.input :content, :as => :ckeditor, :required => true, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
 
   %br
