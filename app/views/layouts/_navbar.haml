@@ -1,0 +1,32 @@
+/ Navigation
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header.page-scroll
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :subscription_type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/#page-top"} ProblemRocks
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.hidden
+          %a{:href => "#page-top"}
+        %li.page-scroll
+          = link_to 'Browse Problems', problems_path
+        %li.page-scroll
+          = link_to 'Post Problem', new_problem_path
+        %li.page-scroll
+          %a{:href => "/#about"} About
+        %li.page-scroll
+          %a{:href => "/#contact"} Contact
+        %li.page-scroll
+          - if current_user
+            = link_to 'log out', destroy_user_session_path
+            = drop_down current_user.email do
+              -#= menu_item "Update Your Profile", edit_user_path(current_user)
+              -#= menu_item "Browse Users", users_path
+          - else
+            =link_to 'sign_up/ sign_in', new_user_registration_path

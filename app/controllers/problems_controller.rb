@@ -20,6 +20,7 @@ class ProblemsController < ApplicationController
 
   # GET /problems/1/edit
   def edit
+    # @solution = @problem.solutions.first
   end
 
   # POST /problems
