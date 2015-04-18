@@ -1,9 +1,11 @@
 %h2 Problem
 = simple_form_for @problem, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :content, :as => :text, :input_html => {:cols => 100, :rows => 10}, :required => true, :label => false
+  = f.input :content, :as => :ckeditor, :required => true, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
+
   %br
   %h2 Solution
   = f.simple_fields_for :solution do |s|
-    = s.input :content, :as => :text, :input_html => {:cols => 100, :rows => 10}, :required => true, :label => false
+    = s.input :content, :as => :ckeditor, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
+    -#= s.input :content, :as => :text, :input_html => {:cols => 100, :rows => 10}, :required => true, :label => false
     = error_span(@solution[:content])
   = f.submit "Save", :class => 'btn-primary'

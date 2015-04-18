@@ -28,6 +28,7 @@ gem "twitter-bootstrap-rails"
 gem 'simple_form'
 gem "haml-rails"
 gem "rspec-rails"
+gem 'ckeditor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
