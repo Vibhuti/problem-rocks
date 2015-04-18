@@ -33,6 +33,7 @@ gem 'pry'
 gem 'pry-coolline'
 gem 'pry-nav'
 gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Use ActiveModel has_secure_password
