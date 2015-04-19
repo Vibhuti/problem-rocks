@@ -5,7 +5,12 @@ class ProblemsController < ApplicationController
   # GET /problems
   # GET /problems.json
   def index
+    if params.has_key?("/problems")
+      name = params["/problems"][:search]
+      @problems = Problem.search(name)
+    else
     @problems = Problem.all
+    end
   end
 
   # GET /problems/1
