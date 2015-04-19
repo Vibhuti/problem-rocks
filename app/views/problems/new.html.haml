@@ -1,18 +1,21 @@
-%br
-%br
-%br
-%h4 Post Problem
-%br
-= simple_form_for @problem, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :title, :label => "Title  :", :input_html => {:style => 'width: 90%', :width => '90px', :height => '30px' }
-  = f.input :content, :as => :ckeditor, :required => true, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
-  %br
-  = f.input :category
+.container
+  .row
+    %br
+    %br
+    %br
+    %h4 Post Problem
+    %br
+    = simple_form_for @problem, :html => { :class => 'form-horizontal' } do |f|
+      = f.input :title, :label => "Title  :", :input_html => {:style => 'width: 90%', :width => '90px', :height => '30px' }
+      = f.input :content, :as => :ckeditor, :required => true, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
+      %br
+      = f.input :category
 
-  %br
-  %h4 Solution
-  = f.simple_fields_for :solution do |s|
-    = s.input :content, :as => :ckeditor, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
-    -#= s.input :content, :as => :text, :input_html => {:cols => 100, :rows => 10}, :required => true, :label => false
-    = error_span(@solution[:content])
-  = f.submit "Save", :class => 'btn-primary'
+      %br
+      %h4 Solution
+      = f.simple_fields_for :solution do |s|
+        = s.input :content, :as => :ckeditor, :input_html => { :toolbar => 'Basic', :style => 'width: 90%', :rows => 10 }
+        -#= s.input :content, :as => :text, :input_html => {:cols => 100, :rows => 10}, :required => true, :label => false
+        = error_span(@solution[:content])
+      = f.input :public
+      = f.submit "Save", :class => 'btn-primary'
