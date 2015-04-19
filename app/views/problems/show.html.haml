@@ -1,28 +1,31 @@
 - model_class = Problem
-.page-header
-  %h2.text-center My Problem
-%p
-  %strong= model_class.human_attribute_name(:title) + ':'
-  %br
-  = @problem.title
-%p
-  %strong= model_class.human_attribute_name(:content) + ':'
-  %br
-  = raw @problem.content
-%p
-  %strong= model_class.human_attribute_name(:user_id) + ':'
-  %br
-  = @problem.user_id
-%p
-  %strong= model_class.human_attribute_name(:category) + ':'
-  %br
-  = @problem.category
+.container
+  .row
+    .col-lg-6
+      .page-header
+        %h2.text-center My Problem
+      %p
+        %strong= model_class.human_attribute_name(:title) + ':'
+        %br
+        = @problem.title
+      %p
+        %strong= model_class.human_attribute_name(:content) + ':'
+        %br
+        = raw @problem.content
+      %p
+        %strong= model_class.human_attribute_name(:user_id) + ':'
+        %br
+        = @problem.user_id
+      %p
+        %strong= model_class.human_attribute_name(:category) + ':'
+        %br
+        = @problem.category
 
-%p
-  %h2.text-center Solutions:
-  %br
-  = raw @problem.solutions.first.content
+      %p
+        %h2.text-center Solutions:
+        %br
+        = raw @problem.solutions.first.content
 
-= link_to t('.back', :default => t("helpers.links.back")), problems_path, :class => 'btn btn-default'
-= link_to t('.edit', :default => t("helpers.links.edit")), edit_problem_path(@problem), :class => 'btn btn-default'
-= link_to t('.destroy', :default => t("helpers.links.destroy")), problem_path(@problem), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+      = link_to t('.back', :default => t("helpers.links.back")), problems_path, :class => 'btn btn-default'
+      = link_to t('.edit', :default => t("helpers.links.edit")), edit_problem_path(@problem), :class => 'btn btn-default'
+      = link_to t('.destroy', :default => t("helpers.links.destroy")), problem_path(@problem), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

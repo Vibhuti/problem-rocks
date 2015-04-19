@@ -21,8 +21,6 @@
         %li.page-scroll
           %a{:href => "/#about"} About
         %li.page-scroll
-          %a{:href => "/#contact"} Contact
-        %li.page-scroll
           - if current_user
             = link_to 'log out', destroy_user_session_path
             = drop_down current_user.email do
@@ -30,3 +28,5 @@
               -#= menu_item "Browse Users", users_path
           - else
             =link_to 'sign_up/ sign_in', new_user_registration_path
+%p.notice= notice
+%p.alert= alert
