@@ -1,9 +1,11 @@
 - model_class = Problem
+%br
+%br
 .container
   .row
     .col-lg-6
       .page-header
-        %h2.text-center My Problem
+        %h3.text-center= @problem.title
       %p
         %strong= model_class.human_attribute_name(:title) + ':'
         %br
@@ -15,14 +17,14 @@
       %p
         %strong= model_class.human_attribute_name(:user_id) + ':'
         %br
-        = @problem.user_id
+        = User.find(@problem.user_id).email
       %p
         %strong= model_class.human_attribute_name(:category) + ':'
         %br
         = @problem.category
 
       %p
-        %h2.text-center Solutions:
+        %h3.text-center Solutions:
         %br
         = raw @problem.solutions.first.content
 

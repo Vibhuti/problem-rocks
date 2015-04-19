@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
 
   # GET /problems
@@ -30,6 +31,7 @@ class ProblemsController < ApplicationController
     @problem = Problem.new(problem_params)
     solution_content = params[:problem][:solution][:content]
     @problem.solutions << Solution.new(:content => solution_content)
+    @problem.user_id = current_user.id
 
     # @solution = @problem.solutions.build(problem_params[:solution])
 
@@ -78,4 +80,5 @@ class ProblemsController < ApplicationController
     def problem_params
       params.require(:problem).permit(:title, :content, :user_id, :category, :solutions_attributes => [:content, :problem_id])
     end
+
 end
